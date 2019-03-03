@@ -168,7 +168,7 @@ const DataService = {
         let itemPriceData = coins.find(coin => coin.url === itemUrl).data[0];
 
         item.price = itemPriceData.close;
-        return item;
+        return item;;
       });
 
       callback(dataWithPrice);
