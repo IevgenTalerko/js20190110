@@ -22,6 +22,18 @@ export default class Table extends Component {
     }
   }
 
+  sort(data, key){
+    let newData = data.sort((a, b) =>{
+      return a[key] > b[key] ? 1 : -1;
+    });
+    this._render(newData);
+  }
+
+  filter(data, options){
+    let newData = data.filter(item => item[options.selectedFilter] == options.filterValue);
+    this._render(newData);
+  }
+
   _render(data) {
     this._el.innerHTML = `
     <table class="data-table highlight"> 
